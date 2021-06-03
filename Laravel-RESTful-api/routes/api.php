@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/customers', [CustomerController::class,'index'])->name('customers.all');
+Route::get('/customers/{customerId}', [CustomerController::class,'show'])->name('customers.show');
+Route::post('/customers', [CustomerController::class,'store'])->name('customers.store');
+Route::put('/customers/{customerId}', [CustomerController::class,'update'])->name('customers.update');
+Route::delete('/customers/{customerId}', [CustomerController::class,'destroy'])->name('customers.destroy');
