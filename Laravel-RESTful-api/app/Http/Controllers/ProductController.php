@@ -63,8 +63,8 @@ class ProductController extends Controller
 
     public function editForm($id)
     {
-        $oldproduct = $this->productRepository->findById($id);
-        return view('products.edit', compact('oldproduct'));
+        $oldProduct = Product::find($id);
+        return view('products.edit', ['oldProduct'=>$oldProduct]);
     }
     public function updateWeb(Request $request, $id)
     {

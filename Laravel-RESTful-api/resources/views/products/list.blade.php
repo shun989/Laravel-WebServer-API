@@ -34,7 +34,7 @@
                     <td>{{$product->title}}</td>
                     <td>{{$product->category}}</td>
                     <td>{{$product->description}}</td>
-                    <td>{{$product->price}}</td>
+                    <td>{{$product->price}}$</td>
                     <td><a href="{{route('products.editForm', $product->id)}}" class="btn btn-warning">Edit</a></td>
                     <td><a href="{{route('products.destroy', $product->id)}}" class="btn btn-danger">Delete</a></td>
                 </tr>

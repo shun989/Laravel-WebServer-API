@@ -58,19 +58,19 @@ class ProductServiceImpl implements ProductService
 
     public function update($request, $id)
     {
-        $oldproduct = $this->productRepository->findById($id);
+        $oldProduct = $this->productRepository->findById($id);
 
-        if (!$oldproduct) {
-            $newproduct = null;
+        if (!$oldProduct) {
+            $newProduct = null;
             $statusCode = 404;
         } else {
-            $newproduct = $this->productRepository->update($request, $oldproduct);
+            $newProduct = $this->productRepository->update($request, $oldProduct);
             $statusCode = 200;
         }
 
         $data = [
             'statusCode' => $statusCode,
-            'products' => $newproduct
+            'products' => $newProduct
         ];
         return $data;
     }
