@@ -2,7 +2,7 @@
 @section('content')
     <h2>Update Product</h2>
 <div class="container">
-    <form action="{{route('products.update')}}" method="post">
+    <form action="{{route('products.update',$oldProduct->id)}}" method="post">
         @method('PUT')
         @csrf
         <input type="hidden" name="id" value="{{$oldProduct['id']}}">

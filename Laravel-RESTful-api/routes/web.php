@@ -32,7 +32,7 @@ Route::prefix('/products')->group(function (){
     Route::get('/create', [ProductController::class,'formCreate'])->name('products.formCreate');
     Route::post('/create', [ProductController::class,'create'])->name('products.create');
     Route::get('/edit/{id}', [ProductController::class,'editForm'])->name('products.editForm');
-    Route::put('/update', [ProductController::class,'updateWeb'])->name('products.update');
+    Route::put('/update/{id}', [ProductController::class,'updateWeb'])->name('products.update');
     Route::get('/destroy/{id}', [ProductController::class,'destroyWeb'])->name('products.destroy');
 
 });
